@@ -1,0 +1,23 @@
+{
+  "name": "pantry-pal",
+  "version": "1.0.0",
+  "description": "A Wa bot to to use gemini ai to create a recipe off the ingredients you have",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aspects19/pantry-pal.git"
+  },
+  "author": "aspects19",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aspects19/pantry-pal/issues"
+  },
+  "homepage": "https://github.com/aspects19/pantry-pal#readme",
+  "dependencies": {
+    "@google/generative-ai": "^0.24.0",
+    "@whiskeysockets/baileys": "^6.7.16"
+  }
+}
