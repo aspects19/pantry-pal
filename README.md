@@ -5,7 +5,7 @@ PantryPal is a WhatsApp bot that uses Gemini API to suggest a recipe off a list 
 
 ![JavaScript](https://img.shields.io/badge/JavaScript-vES15-yellow?style=flat&logo=javascript&logoColor=white)
 ![Baileys/WhiskeySockets](https://img.shields.io/badge/Baileys%2FWhiskeySockets-v6.0.0-green?style=flat&logo=whatsapp&logoColor=white)
-![Gemini](https://img.shields.io/badge/Gemini-v0.4.2-purple?style=flat&logo=google-gemini&logoColor=white)
+![Generative-ai](https://img.shields.io/badge/Gemini-v0.24.0-orange?style=flat&logo=google-gemini&logoColor=white)
 
 
 ## Installation
