@@ -1,6 +1,6 @@
 # PantryPal | A hackathon project
 
-PantryPal is a WhatsApp bot that uses Gemini API to suggest a recipe off a list of ingredients you give to it. It has the ability of suggesting additional recipies if you give too few engredients. This is a project for this [Hackathon](https://)
+PantryPal is a WhatsApp bot that uses Gemini API to suggest a recipe off a list of ingredients you give to it. It has the ability of suggesting additional recipies if you give too few engredients. This is a project for this [Hackathon](https://build-your-own-ai-chat-bot.devpost.com)
 
 
 ![JavaScript](https://img.shields.io/badge/JavaScript-vES15-yellow?style=flat&logo=javascript&logoColor=white)
