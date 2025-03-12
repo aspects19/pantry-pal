@@ -3,8 +3,6 @@ const {
     default: pantryConnect,
     useMultiFileAuthState,
     DisconnectReason,
-    downloadMediaMessage,
-    getContentType,
   } = require("@whiskeysockets/baileys");
   const pino = require("pino");
   const fs = require('fs');
@@ -21,7 +19,7 @@ async function startPantryPal() {
     // console.log(result.response.text());
     
     const { state, saveCreds } = await useMultiFileAuthState("./session");
-    const AMD = pantryConnect({
+    const Pantry = pantryConnect({
       logger: pino({ level: "silent" }),
       printQRInTerminal: true,
       browser: ["Ubuntu", "Chrome", "20.0.04"],
@@ -32,18 +30,15 @@ async function startPantryPal() {
     });
 
   
-    AMD.ev.on("messages.upsert", async (chatUpdate) => {
+    Pantry.ev.on("messages.upsert", async (chatUpdate) => {
       try {
+        Pantry.sendPresenceUpdate('unavailable');
+        if (!m) return;
+        if (m.key.remoteJid=="status@broadcast" || m.key.participant) return;
         const m = chatUpdate.messages[0]
-        AMD.sendPresenceUpdate('unavailable');
-         if (!m) return;
-        if (m.key.remoteJid=="status@broadcast") return;
         
         const triggerWords = [];
   
-        if (m.key.fromMe && (m.message?.conversation.includes(triggerWords) || m.message?.extendedTextMessage?.text.includes(triggerWords)) ) {
-          AMD.sendMessage(owner, {text: "I'm alive!"})
-        };
 
 
       } catch (err) {
@@ -51,7 +46,7 @@ async function startPantryPal() {
       }
     });
   
-    AMD.ev.on("connection.update", async (update) => {
+    Pantry.ev.on("connection.update", async (update) => {
       const { connection, lastDisconnect } = update;
       if (connection === "open") console.log("Script online");
       if (connection === "close") {
@@ -87,9 +82,9 @@ async function startPantryPal() {
       }
     });
   
-    AMD.ev.on("creds.update", saveCreds);
+    Pantry.ev.on("creds.update", saveCreds);
   
-    return AMD;
+    return Pantry;
   };
   
   startPantryPal();
