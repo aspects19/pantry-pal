@@ -4,7 +4,8 @@
   "description": "A Wa bot to to use gemini ai to create a recipe off the ingredients you have",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
