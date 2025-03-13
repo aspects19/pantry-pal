@@ -41,7 +41,7 @@ async function startPantryPal() {
         Pantry.sendPresenceUpdate('unavailable');
         
         const m = messages[0];
-        // Avoid processing non text messages and text from unsutable sources eg stories
+        // Avoid processing non text messages and text from unsuitable sources eg stories
         if (!m || !m.message || !m.key.remoteJid) return;
         if ( m.key.remoteJid.includes("g.us" || m.key.remoteJid=="status@broadcast" || m.key.fromMe ))  return;
         
